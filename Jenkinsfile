@@ -26,8 +26,12 @@ pipeline {
                         sh "mkdir -p ${RESULTS_DIR}/cypress"
                     }
 
-                    stage('Cypress - Run Tests') {
-                        sh "npx cypress run --browser chrome --headless"
+                    stage('Cypress - Run Tests example.cy.js') {
+                        sh "npx cypress run --spec \"cypress/e2e/example.cy.js\" --browser chrome --headless"
+                    }
+
+                    stage('Cypress - Run Tests example1.cy.js') {
+                        sh "npx cypress run --spec \"cypress/e2e/example1.cy.js\" --browser chrome --headless"
                     }
                 }
             }
