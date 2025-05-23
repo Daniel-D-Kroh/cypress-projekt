@@ -25,6 +25,7 @@ pipeline {
                     stage('Cypress - Prepare Reports') {
                         sh "mkdir -p ${RESULTS_DIR}/cypress"
                     }
+
                     stage('Cypress - Run Tests example.cy.js') {
                         sh "npx cypress run --browser chrome --headless"
                     }
