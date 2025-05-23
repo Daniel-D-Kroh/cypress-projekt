@@ -5,7 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       return config;
     },
-    specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
+    specPattern: 'cypress/test/**/*.cy.{js,jsx,ts,tsx}',
   },
 
   forbidOnly: !!process.env.CI,
