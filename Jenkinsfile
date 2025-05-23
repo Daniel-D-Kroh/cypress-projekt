@@ -25,6 +25,7 @@ pipeline {
                     stage('Cypress - Prepare Reports') {
                         sh "mkdir -p ${RESULTS_DIR}/cypress"
                     }
+
                     stage('Cypress - List Files (Debug)') {
                         sh "ls -R cypress" // Listet rekursiv alle Dateien im 'cypress'-Ordner auf
                     }
