@@ -25,6 +25,9 @@ pipeline {
                     stage('Cypress - Prepare Reports') {
                         sh "mkdir -p ${RESULTS_DIR}/cypress"
                     }
+                    stage('Cypress - List Files (Debug)') {
+                        sh "ls -R cypress" // Listet rekursiv alle Dateien im 'cypress'-Ordner auf
+                    }
 
                     stage('Cypress - Run Tests example.cy.js') {
                         sh "npx cypress run --browser chrome --headless"
