@@ -5,10 +5,7 @@ describe('Volksbank User Website Tests', () => {
 
     beforeEach(() => {
         cy.visit('https://www.vb-muensterland.de/privatkunden.html');
-        cy.wait(1000);
         cy.get('button').contains('Allen zustimmen').click();
-        cy.wait(4000);
-        //cy.get('[data-testid="lightbox lightbox--cookie-consent cheering"]').should('not.exist');
         cy.title().should('eq', 'Privatkunden - Volksbank im Münsterland eG');
     });
 
@@ -54,12 +51,9 @@ describe('Volksbank User Website Tests', () => {
         cy.get('mat-label').contains('Berufliche Tätigkeit').click();
         cy.get('[role="listbox"').contains('Angestellte(r)').click();
         cy.get('mat-radio-button').first().find('input[type="radio"]').check();
-
         cy.get('mat-label').contains('Land auswählen').click();
         cy.get('[role="listbox"').contains('Deutschland').click();
         cy.get('#weitereinfos-abfrage-bundeszentralamt-input').click();
-
-        //Button is Bugged
         cy.get('[data-cy="weiter-button"]').click();
 
 
@@ -69,7 +63,6 @@ describe('Volksbank User Website Tests', () => {
         cy.get('[data-cy="password-input"]').type('Test12345');
         cy.get('[data-cy="password-wdh-input"]').type('Test12345');
         cy.get('[data-cy="weiter-button"]').click();
-
 
         cy.log('Schritt 6: Marketing-Präferenzen & Zustimmungen');
         cy.get('#mat-mdc-checkbox-1').click();
